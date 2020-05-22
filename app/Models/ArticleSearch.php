@@ -13,7 +13,6 @@ class ArticleSearch extends Article
         $labelId = $request->get('label_id', 0);
 
         $query = self::with(['category', 'articleLabelOtm']);
-
         if($keyword){
             $lLabelId = Label::where('name', 'like',  '%'. $keyword . '%')->get()->pluck('id')->toArray();
             $lCategoryId = Category::where('name', 'like',  '%'. $keyword . '%')->get()->pluck('id')->toArray();
@@ -23,6 +22,7 @@ class ArticleSearch extends Article
             if(count($lCategoryId)){
                 $query->where('category_id', 'in', $categoryId);
             }
+
 
             if(count($lLabelId)){
                 $query->whereHas('articleLabelOtm',function($query) use ($lLabelId){
@@ -47,7 +47,13 @@ class ArticleSearch extends Article
             ->orderBy('sort', 'desc')
             ->orderBy('created_at', 'desc')
             ->where('status', Article::STATUS_ON)
-            ->paginate(15);
+            ->paginate(1)
+            ->appends([
+                'keyword' => $keyword,
+                'category_id' => $categoryId,
+                'label_id' => $labelId,
+            ])
+            ;
 
     }
 

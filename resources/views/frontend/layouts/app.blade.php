@@ -48,7 +48,7 @@
                                 <h3 class="panel-title">关键字搜索</h3>
                             </div>
                             <div class="panel-body">
-                                <input type="text" name="search_keyword" class="form-control" placeholder="关键字:分类,标签,标题,描述" />
+                                <input type="text" name="keyword" class="form-control" placeholder="关键字:分类,标签,标题,描述" />
                                 <hr />
                                 <input type="submit"  class="btn btn-info btn-sm btn-block" value="搜索">
                             </div>
