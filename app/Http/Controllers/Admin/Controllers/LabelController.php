@@ -30,6 +30,7 @@ class LabelController extends AdminController
         $grid = new Grid(new Label());
         $grid->column('id', $lAttributeLabel['id'])->sortable();
         $grid->column('name', $lAttributeLabel['name'])->filter('like');
+        $grid->column('sort', $lAttributeLabel['sort'])->sortable();
         $grid->column('status', $lAttributeLabel['status'])->using($lStatusEnum)->filter($lStatusEnum)->sortable();
         $grid->column('created_at', $lAttributeLabel['created_at'])->filter('range', 'datetime')->sortable();
         $grid->column('updated_at', $lAttributeLabel['updated_at'])->filter('range', 'datetime')->sortable();
