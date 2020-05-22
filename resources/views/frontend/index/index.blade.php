@@ -19,13 +19,19 @@
                 <div class="blog-info">
                     <p>
                         <span class="label label-default">分类:</span>
-                        <span class="label label-success">{!! $v->category->name !!}</span>
+                        <a href="{!! url('/') . '?category_id=' . $v->category_id !!}">
+                            <span class="label label-success">{!! $v->category->name !!}</span>
+                        </a>
                     </p>
                     @if($v->articleLabelOtm->count())
                         <p>
                             <span class="label label-default">标签:</span>
                             @foreach($v->articleLabelOtm as $k2 => $v2)
-                                <span class="label label-info">{!! $lsLabel[$v2->label_id]!!}</span>
+                                @if(isset($lsLabel[$v2->label_id]))
+                                <a href="{!! url('/') . '?label_id=' . $v2->label_id !!}">
+                                    <span class="label label-info">{!! $lsLabel[$v2->label_id]!!}</span>
+                                </a>
+                                @endif
                             @endforeach
                         </p>
                     @endif

@@ -70,7 +70,7 @@
 
                         <li class="list-group-item">
                             {{--<span class="badge">104</span>--}}
-                            <a href="{!! url('/',['label_id' => $v->category_id]) !!}">{!! $v->name !!}</a>
+                            <a href="{!! url('/') . '?category_id=' . $v->id !!}">{!! $v->name !!}</a>
                         </li>
                     @endforeach
                     {{--<li class="list-group-item">--}}
