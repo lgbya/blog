@@ -47,13 +47,12 @@ class ArticleSearch extends Article
             ->orderBy('sort', 'desc')
             ->orderBy('created_at', 'desc')
             ->where('status', Article::STATUS_ON)
-            ->paginate(1)
+            ->paginate(10)
             ->appends([
                 'keyword' => $keyword,
                 'category_id' => $categoryId,
                 'label_id' => $labelId,
-            ])
-            ;
+            ]);
 
     }
 
