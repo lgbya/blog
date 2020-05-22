@@ -18,4 +18,5 @@
     五, 访问后台，http://域名/admin 
     账号:admin
     密码:admin
-` 
+`
+---- 
