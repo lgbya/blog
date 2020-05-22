@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'Frontend\IndexController@index');
+Route::get('/details/{id?}', 'Frontend\IndexController@details');
+Route::get('/search/', 'Frontend\IndexController@search');

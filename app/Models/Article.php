@@ -42,6 +42,16 @@ class Article extends BaseModel
         ];
     }
 
+    public function category()
+    {
+        return $this->hasOne(Category::class, 'id', 'category_id');
+    }
+
+    public function articleLabelOtm()
+    {
+        return $this->hasMany(ArticleLabelOtm::class, 'article_id', 'id');
+    }
+
     public function prepareData($lsData)
     {
         if(isset($lsData['image'])){
@@ -94,7 +104,7 @@ class Article extends BaseModel
 
         DB::commit();
         return true;
-
     }
+
 
 }

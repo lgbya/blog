@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="{{asset('vendor/laravel-admin-ext/editormd/editormd-1.5.0/css/editormd.min.css')}}" />
 
 <div id="doc-content">
-    <textarea   style="display:none;">{!!$editormdContent!!}</textarea>
+    <textarea   style="display:none;">{!!$docContent!!}</textarea>
 </div>
 
 <div id="content">

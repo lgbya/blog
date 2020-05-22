@@ -10,7 +10,7 @@
  * @updateTime  2015-06-09
  */
 
-;(function(factory) {
+(function(factory) {
     "use strict";
     
 	// CommonJS/Node.js
