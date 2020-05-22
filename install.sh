@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
 
-php artisan admin:install
+composer install -vvv
+php artisan migrate
+php artisan db:seed --class=AdminTablesSeeder
 php artisan storage:link
