@@ -41,9 +41,10 @@ class IndexController extends Controller
     public function details($id)
     {
 
-        $lArticle = Article::findOrFail($id)->with(['category', 'articleLabelOtm'])
+        $lArticle = Article::with(['category', 'articleLabelOtm'])
             ->where('status', Article::STATUS_ON)
-            ->first();
+            ->findOrFail($id);
+
         $lArticle->increment('hits');
         return view('frontend.index.details', [
             'info' => $lArticle,
