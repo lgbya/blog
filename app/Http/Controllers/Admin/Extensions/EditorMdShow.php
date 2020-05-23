@@ -8,7 +8,7 @@ class EditorMdShow extends AbstractField
 
     public function render($arg = '')
     {
-        return view('extensions\editormd', ['docContent' => $this->value]);
+        return view('extensions.editormd', ['docContent' => $this->value]);
     }
 
 }

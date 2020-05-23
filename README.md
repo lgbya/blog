@@ -7,6 +7,7 @@
     二, 修改.env.example 为 .env
 
     三, 修改.env 下的以下字段
+    APP_URL=你的域名
     DB_USERNAME=mysql账号
     DB_PASSWORD=mysql密码
     
