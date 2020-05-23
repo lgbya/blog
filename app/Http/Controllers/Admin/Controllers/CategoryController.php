@@ -81,7 +81,7 @@ class CategoryController extends AdminController
 
         $form->text('name', $lAttributeLabel['name'])->required()->rules('required');
         $form->number('sort', $lAttributeLabel['sort'])->required()->value(0)->rules('required|integer');
-        $form->select('status', $lAttributeLabel['status'])->options(Category::statusEnum());
+        $form->select('status', $lAttributeLabel['status'])->options(Category::statusEnum())->default(Category::STATUS_ON);
         return $form;
     }
 }

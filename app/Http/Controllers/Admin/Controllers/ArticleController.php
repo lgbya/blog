@@ -153,7 +153,7 @@ class ArticleController extends AdminController
         $form->multipleSelect("labels",'标签')->options($lLabel)->default(array_keys($lSelectLabel));
         $form->text('description', $lAttributeLabel['description']);
         $form->number('sort', $lAttributeLabel['sort'])->required()->value(0)->rules('required|integer');
-        $form->select('status', $lAttributeLabel['status'])->options(Article::statusEnum());
+        $form->select('status', $lAttributeLabel['status'])->options(Article::statusEnum())->default(Article::STATUS_ON);
         $form->image('image', $lAttributeLabel['image']);
         $form->editormd('content', $lAttributeLabel['content']);
         return $form;

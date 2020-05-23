@@ -77,7 +77,7 @@ class LabelController extends AdminController
         $form = new Form(new Label());
         $form->text('name', $lAttributeLabel['name'])->required()->rules('required');
         $form->number('sort', $lAttributeLabel['sort'])->required()->value(0)->rules('required|integer');
-        $form->select('status', $lAttributeLabel['status'])->options(Label::statusEnum());
+        $form->select('status', $lAttributeLabel['status'])->options(Label::statusEnum())->default(Label::STATUS_ON);
         return $form;
     }
 }
