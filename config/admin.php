@@ -136,7 +136,6 @@ return [
 
         // The URIs that should be excluded from authorization.
         'excepts' => [
-            '*',
             'auth/login',
             'auth/logout',
             '_handle_action_',
